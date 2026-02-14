@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis 15 Años | Mariana Martinez Grisales</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="background-decor">
+  <img src="flores-izq.png" class="flower flower-left">
+  <img src="flores-der.png" class="flower flower-right">
+</div>
+
+<div class="sparkles"></div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  document.querySelectorAll(".fade-init").forEach(el => {
+    observer.observe(el);
+  });
+
+});
+</script>
+
+
+
+<!-- Música -->
+<audio id="music" loop>
+  <source src="assets/audio/tinkerbell.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-btn" class="btn-magic">🎵 Música</button>
+
+
+<!-- Portada -->
+<section class="hero">
+  <h1 class="title-glow">Mis 15 Años</h1>
+  <h2 class="magic-name">Mariana</h2>
+  <h3>Martínez Grisales</h3>
+</section>
+
+<!-- Texto -->
+<section class="section fade-init">
+  <div class="section-overlay"></div>
+  <p>
+    Dicen que en el bosque encantado los deseos vuelan como hadas<br>
+    y la música despierta la alegría más pura.<br><br>
+
+    Hoy quiero invitarte a compartir conmigo<br>
+    una celebración llena de luz, amistad y momentos inolvidables.<br>
+    Porque la verdadera magia no está en el polvo dorado…<br>
+    está en las personas que caminan a nuestro lado. 🌸✨
+  </p>
+</section>
+
+<!-- Imagen -->
+<section class="section fade-init">
+  <div class="section-overlay"></div>
+  <img src="assets/img/hada.png" class="photo" loading="lazy">
+</section>
+
+<!-- Fecha -->
+<section class="section section-date fade-init">
+
+  <div class="section-overlay"></div>
+
+  <h2 class="date-title fade-title fade-init">Fecha</h2>
+
+  <div class="date-card">
+
+    <div class="date-side">
+      <span class="date-day">SÁBADO</span>
+      <span class="date-year">2026</span>
+    </div>
+
+    <div class="date-number">
+      11
+    </div>
+
+    <div class="date-side">
+      <span class="date-month">ABRIL</span>
+      <span class="date-time">8:00 P.M.</span>
+    </div>
+
+  </div>
+
+  <p class="date-text">
+    Te esperamos para celebrar los quince años de<br>
+    <strong>Mariana Martinez Grisales</strong>
+  </p>
+
+  <div class="buttons">
+  <a href="https://maps.app.goo.gl/EhZnyr1U6Pt7JKFbA?g_st=ic" class="btn-magic">📍 Ubicación</a>
+
+</section>
+
+</section>
+
+<!-- Dress code -->
+<section class="section dresscode-section fade-init">
+  <h2>Dress Code</h2>
+
+  <div class="dresscode-content">
+
+    <div class="dress-item">
+      <img src="assets/img/dress code.png" alt="Vestido elegante">
+      <p>Formal</p>
+    </div>
+
+    <div class="dress-item">
+      <img src="assets/img/sobre.png" alt="Lluvia de sobres">
+      <p>Lluvia de sobres</p>
+    </div>
+
+  </div>
+
+  <div class="color-palette">
+
+  <h3 class="palette-title">Colores Reservados</h3>
+
+  <div class="palette-icons">
+    <img src="assets/img/morado.png" alt="Color 1">
+    <img src="assets/img/verde.png" alt="Color 2">
+    <img src="assets/img/azul.png" alt="Color 3">
+  </div>
+
+  <p class="palette-note">
+    Estos tonos y todas sus variaciones estarán reservados para la quinceañera 💛
+  </p>
+
+</div>
+
+</section>
+
+
+
+<!-- Fotos -->
+<section class="section fade-init">
+  <div class="section-overlay"></div>
+  <h2>Recuerdos que vivirán para siempre</h2>
+  <p>Ayúdanos a guardar cada momento mágico</p>
+
+  <img src="assets/img/qr-drive.png" class="qr" loading="lazy">
+  <p><small>Escanea y comparte tus recuerdos</small></p>
+
+ <a href="https://drive.google.com/drive/folders/1JlOKhwjKRvbEyDoYS_bWRimwqxenZdgI" target="_blank" class="btn-magic">
+  📸 Sube tus fotos aquí
+  </a>
+
+</section>
+
+<!-- recomendacion musica -->
+<section class="section section-music fade-init">
+
+  <div class="section-overlay"></div>
+
+  <h2 class="fade-title fade-init">Música</h2>
+
+  <p class="music-text">
+    Ayúdanos a crear la playlist perfecta para esta noche mágica ✨<br>
+    <em>¿Qué canción no puede faltar?</em>
+  </p>
+
+<form
+  action="https://docs.google.com/forms/d/e/1FAIpQLSfHE82J-cOJbuM6Pb_SnXIaxXic85rMm0k3Ruh1anRKtb45jQ/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  class="music-form-custom"
+  onsubmit="handleMusicSubmit()"
+>
+
+  <input
+    type="text"
+    name="entry.1578186284"
+    placeholder="Nombre de la canción"
+    required
+  >
+
+  <input
+    type="text"
+    name="entry.1324785936"
+    placeholder="Artista"
+    required
+  >
+
+  <input
+    type="text"
+    name="entry.1971603871"
+    placeholder="Género"
+  >
+
+  <button type="submit" class="btn-magic">
+    Enviar sugerencia 🎶
+  </button>
+
+</form>
+
+
+  <div id="music-success" style="display:none;">
+  <h3 class="fade-title">¡Gracias por tu sugerencia! 💛</h3>
+  <p>Tu canción hará parte de una noche mágica ✨🌿</p>
+</div>
+
+</section>
+
+<script>
+function handleMusicSubmit() {
+  setTimeout(() => {
+    document.querySelector('.music-form-custom').style.display = 'none';
+    document.getElementById('music-success').style.display = 'block';
+  }, 600);
+}
+</script>
+
+
+<!-- Confirmar asistencia -->
+<section class="section fade-init">
+  <div class="section-overlay"></div>
+
+  <h2 class="rsvp-title fade-title fade-init">Confirmar Asistencia</h2>
+
+  <p class="rsvp-sub">Solo faltan</p>
+
+  <div id="countdown" class="countdown">
+    <div>
+      <span id="days">52</span>
+      <small>DÍAS</small>
+    </div>
+    <div>
+      <span id="hours">6</span>
+      <small>HORAS</small>
+    </div>
+    <div>
+      <span id="minutes">25</span>
+      <small>MINUTOS</small>
+    </div>
+    <div>
+      <span id="seconds">60</span>
+      <small>SEGUNDOS</small>
+    </div>
+  </div>
+
+  <p class="rsvp-text">
+    Agradecemos confirmar tu asistencia<br>
+    <strong>antes del 2 de marzo</strong>
+  </p>
+
+  <div class="buttons">
+    <a href="https://wa.me/573245767517" class="btn-magic">💌 Confirmar asistencia</a>
+  </div>
+
+
+  <p class="final"><br><br><br>
+    En un rincón secreto del bosque encantado,<br>
+    donde las flores susurran historias y el polvo de hadas ilumina los sueños,<br>
+    quiero que hagas parte de este momento tan especial.<br><br>
+
+    Ven a celebrar conmigo bajo luces doradas,<br>
+    entre risas, magia y melodías que llenan el corazón.<br>
+    Tu presencia hará que este cuento brille aún más. 🌸✨
+  </p>
+
+</section>
+
+
+<script src="js/script.js"></script>
+
+<iframe
+  name="hidden_iframe"
+  style="display:none;"
+></iframe>
+
+</body>
+<div class="magic-particles"></div>
+</html>
